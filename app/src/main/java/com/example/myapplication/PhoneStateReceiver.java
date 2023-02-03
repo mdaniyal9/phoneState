@@ -59,13 +59,12 @@ public   class PhoneStateReceiver extends BroadcastReceiver {
             case TelephonyManager.CALL_STATE_OFFHOOK:
                 if(lastState != TelephonyManager.CALL_STATE_RINGING){
                     isIncoming = false;
-
                     Toast.makeText(context," State OffHook  isIncoming true",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
                     isIncoming = true;
-                    Toast.makeText(context,"State OffHook Talk Mode",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"State Talking",Toast.LENGTH_SHORT).show();
                 }
 
                 break;
@@ -75,7 +74,7 @@ public   class PhoneStateReceiver extends BroadcastReceiver {
                     Toast.makeText(context,"Cancelled",Toast.LENGTH_SHORT).show();
                 }
                 else if(isIncoming){
-                    Toast.makeText(context,"Cancelled By Me",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,"Cancelled After Pick Up call",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(context,"State IDLE Saved Number",Toast.LENGTH_SHORT).show();
